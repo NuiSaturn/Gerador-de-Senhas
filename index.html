@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Gerador de Senha</title>
+</head>
+
+<body>
+    <div class="geradorPrincipal">
+        <h1>Gerador de Senhas</h1>
+
+        <!-- Resultado da senha gerada -->
+        <div class="resultadoSenha">
+            <input type="text" name="resultadoSenha" placeholder="S3NH4!" id="result" readonly>
+            <button type="button" onclick="copiarSenha()">&#128203;</button> <!-- Ícone de copiar -->
+        </div>
+
+        <!-- Controle de tamanho da senha -->
+        <div class="tamanhoSenha">
+            <h3>Tamanho da Senha</h3>
+            <input type="range" name="tamanhoSenha" id="tamanho" min="4" max="20" value="12"
+                oninput="atualizarValor(this.value)">
+            <span id="valorTamanho">12</span>
+        </div>
+
+        <!-- Opções de inclusão de caracteres na senha -->
+        <div class="escolhasDeSenhas">
+            <input type="checkbox" id="letrasMaiusculas" class="inp-cbx" />
+            <label for="letrasMaiusculas" class="cbx">
+                <span>
+                    <svg height="10px" width="12px"></svg>
+                </span>
+                <span>Incluir letras Maiúsculas</span>
+            </label>
+            <svg class="inline-svg">
+                <symbol viewBox="0 0 12 10" id="check-4">
+                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </symbol>
+            </svg>
+        </div>
+
+        <div class="escolhasDeSenhas">
+            <input type="checkbox" id="letrasMinusculas" class="inp-cbx" />
+            <label for="letrasMinusculas" class="cbx">
+                <span>
+                    <svg height="10px" width="12px"></svg>
+                </span>
+                <span>Incluir letras Minúsculas</span>
+            </label>
+            <svg class="inline-svg">
+                <symbol viewBox="0 0 12 10" id="check-4">
+                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </symbol>
+            </svg>
+        </div>
+
+        <div class="escolhasDeSenhas">
+            <input type="checkbox" id="numeros" class="inp-cbx" />
+            <label for="numeros" class="cbx">
+                <span>
+                    <svg height="10px" width="12px"></svg>
+                </span>
+                <span>Incluir Números</span>
+            </label>
+            <svg class="inline-svg">
+                <symbol viewBox="0 0 12 10" id="check-4">
+                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </symbol>
+            </svg>
+        </div>
+
+        <div class="escolhasDeSenhas">
+            <input type="checkbox" id="simbolos" class="inp-cbx" />
+            <label for="simbolos" class="cbx">
+                <span>
+                    <svg height="10px" width="12px"></svg>
+                </span>
+                <span>Incluir Símbolos</span>
+            </label>
+            <svg class="inline-svg">
+                <symbol viewBox="0 0 12 10" id="check-4">
+                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </symbol>
+            </svg>
+        </div>
+        <br>
+
+        <!-- Opções de força da senha -->
+        <div class="radio-inputs">
+            <label class="radio">
+                <input type="radio" name="radio" value="fraca" checked="">
+                <span class="name">FRACA</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="radio" value="forte">
+                <span class="name">FORTE</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="radio" value="hardcore">
+                <span class="name">HARDCORE</span>
+            </label>
+        </div>
+        <br>
+
+        <!-- Botão para gerar a senha -->
+        <div class="bttGerador">
+            <button type="button" onclick="gerarSenha()">Gerar S3nh4!</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
